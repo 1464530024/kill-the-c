@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#3c3c44"/>
+      <stop offset="0.42" stop-color="#1c1c21"/>
+      <stop offset="1" stop-color="#08080b"/>
+    </linearGradient>
+    <linearGradient id="plate" x1="0.15" y1="0" x2="0.85" y2="1">
+      <stop offset="0" stop-color="#fbfcfe"/>
+      <stop offset="0.34" stop-color="#ccd1da"/>
+      <stop offset="0.62" stop-color="#9aa0ac"/>
+      <stop offset="1" stop-color="#6d737f"/>
+    </linearGradient>
+    <linearGradient id="plateDark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b6bcc7"/>
+      <stop offset="1" stop-color="#6b717d"/>
+    </linearGradient>
+    <linearGradient id="blade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.35" stop-color="#dfe4ec"/>
+      <stop offset="0.72" stop-color="#a8aeba"/>
+      <stop offset="1" stop-color="#767c88"/>
+    </linearGradient>
+    <linearGradient id="bevel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#c9ced8"/>
+    </linearGradient>
+    <linearGradient id="handle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a3a42"/>
+      <stop offset="0.4" stop-color="#202027"/>
+      <stop offset="1" stop-color="#101014"/>
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff3b30" stop-opacity="0"/>
+      <stop offset="0.3" stop-color="#ff6a3d" stop-opacity="0.85"/>
+      <stop offset="0.7" stop-color="#ff9a3d" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#ff5a2d" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="spec" cx="0.32" cy="0.24" r="0.75">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0.06"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="soft" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <filter id="soft2" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="1.6"/>
+    </filter>
+
+    <clipPath id="cTop"><rect x="-10" y="-10" width="276" height="124"/></clipPath>
+    <clipPath id="cBot"><rect x="-10" y="140" width="276" height="140"/></clipPath>
+
+    <g id="disk">
+      <circle cx="128" cy="128" r="76" fill="url(#plate)"/>
+      <circle cx="128" cy="128" r="76" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="1.6"/>
+      <circle cx="128" cy="128" r="76" fill="none" stroke="#3a3f48" stroke-opacity="0.35" stroke-width="3"/>
+      <circle cx="128" cy="128" r="67" fill="none" stroke="#5d636e" stroke-opacity="0.5" stroke-width="1.4"/>
+      <circle cx="128" cy="128" r="59" fill="url(#plateDark)" fill-opacity="0.35"/>
+      <circle cx="128" cy="128" r="59" fill="none" stroke="#ffffff" stroke-opacity="0.45" stroke-width="1.2"/>
+      <circle cx="128" cy="128" r="49" fill="none" stroke="#5d636e" stroke-opacity="0.42" stroke-width="1.2"/>
+      <circle cx="128" cy="128" r="40" fill="none" stroke="#ffffff" stroke-opacity="0.32" stroke-width="1"/>
+      <circle cx="128" cy="128" r="30" fill="url(#plateDark)"/>
+      <circle cx="128" cy="128" r="30" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="1"/>
+      <circle cx="128" cy="128" r="14" fill="#17171c"/>
+      <circle cx="128" cy="128" r="14" fill="none" stroke="#ffffff" stroke-opacity="0.22" stroke-width="1"/>
+      <circle cx="128" cy="128" r="7.5" fill="#0a0a0d"/>
+      <g fill="#4d535d">
+        <circle cx="187" cy="112" r="4"/>
+        <circle cx="187" cy="150" r="4"/>
+        <circle cx="69" cy="112" r="4"/>
+        <circle cx="69" cy="150" r="4"/>
+      </g>
+      <circle cx="128" cy="128" r="76" fill="url(#spec)"/>
+    </g>
+  </defs>
+
+  <!-- 应用底板 -->
+  <rect x="0" y="0" width="256" height="256" rx="56" fill="url(#bg)"/>
+  <rect x="1.5" y="1.5" width="253" height="253" rx="54.5" fill="none" stroke="#ffffff" stroke-opacity="0.13" stroke-width="2"/>
+
+  <g transform="rotate(45 128 128)">
+    <!-- 上半块磁盘 -->
+    <g clip-path="url(#cTop)">
+      <use href="#disk"/>
+    </g>
+    <!-- 切口余温 -->
+    <rect x="-10" y="112" width="276" height="7" fill="url(#glow)" filter="url(#soft)" transform="translate(0,14)"/>
+    <!-- 下半块磁盘（沿切向错位） -->
+    <g clip-path="url(#cBot)" transform="translate(14,0)">
+      <use href="#disk"/>
+      <rect x="34" y="138" width="220" height="2.6" fill="url(#glow)" filter="url(#soft2)"/>
+    </g>
+    <!-- 刀 -->
+    <g>
+      <rect x="0" y="109" width="58" height="40" rx="11" fill="url(#handle)"/>
+      <rect x="0" y="109" width="58" height="40" rx="11" fill="none" stroke="#ffffff" stroke-opacity="0.17" stroke-width="1.4"/>
+      <rect x="7" y="114" width="44" height="4.6" rx="2.3" fill="#ffffff" fill-opacity="0.11"/>
+      <circle cx="18" cy="129" r="3.3" fill="#0c0c10" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1"/>
+      <circle cx="40" cy="129" r="3.3" fill="#0c0c10" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1"/>
+      <rect x="50" y="105" width="14" height="48" rx="4.5" fill="#8c929d"/>
+      <rect x="50" y="105" width="14" height="48" rx="4.5" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="1.2"/>
+      <path d="M56 106 H196 L243 126 V132.6 L62 152 H56 Z" fill="url(#blade)"/>
+      <path d="M56 106 H196 L243 126 V129.6 L60 126.5 Z" fill="url(#bevel)"/>
+      <path d="M56 106 H196 L243 126" fill="none" stroke="#ffffff" stroke-width="1.7" stroke-opacity="0.92"/>
+      <path d="M62 152 L243 132.6 V126 L196 106" fill="none" stroke="#585e69" stroke-opacity="0.5" stroke-width="1.2"/>
+      <path d="M64 129 H228" stroke="#6a707b" stroke-opacity="0.4" stroke-width="1.2"/>
+    </g>
+  </g>
+</svg>

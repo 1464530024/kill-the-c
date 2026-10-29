@@ -1,0 +1,22 @@
+# 统一换行符为 LF，避免在 Linux/macOS 上 clone 后 shell 脚本无法执行
+* text=auto eol=lf
+
+# shell 脚本必须保持 LF
+*.sh   text eol=lf
+
+# 源码
+*.go    text eol=lf
+*.js    text eol=lf
+*.css   text eol=lf
+*.html  text eol=lf
+*.svg   text eol=lf
+*.md    text eol=lf
+*.py    text eol=lf
+*.mod   text eol=lf
+*.sum   text eol=lf
+
+# 二进制文件不参与换行符转换
+*.exe  binary
+*.ico  binary
+*.png  binary
+*.gz   binary

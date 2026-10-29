@@ -1,0 +1,24 @@
+# ── 构建缓存与本地工具链（体积大，不入库）──────────────────────────
+.build/
+.tools/
+
+# ── 构建产物（由 build.sh 生成；安装包通过 GitHub Releases 分发）────
+dist/
+installer/payload/*.gz
+!installer/payload/.gitkeep
+*.syso
+
+# ── 调试与临时文件 ──────────────────────────────────────────────────
+.probe/
+*.log
+*.bak
+
+# ── 编辑器与系统 ────────────────────────────────────────────────────
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini
+desktop.ini
+
+# ── 本地助手记忆（含本机路径等私有信息，不入库）────────────────────
+.workbuddy/

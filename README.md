@@ -1,4 +1,4 @@
-# Kill the C
+# Kill the C C盘清理
 
 > 轻量级 Windows 系统盘清理工具 ｜ 苹果式简约科技风 ｜ **安装包 5.0 MB** ｜ MIT License
 
